@@ -48,7 +48,7 @@ Il faut ajouter ensuite au fichier GRUB:
 ### 8. Ajoutez une entrée permettant d’arrêter la machine, et une autre permettant de la redémarrer.
 Dans /etc/grub.d/40_custom : 
 <code>
-  menuentry ’Arrêt du système’ { halt }</br> 
+  menuentry ’Arrêt du système’ { halt }
   menuentry ’Redémarrage du système’ { reboot }
 </code></br>
 
