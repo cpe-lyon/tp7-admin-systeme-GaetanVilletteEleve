@@ -61,6 +61,10 @@ Dans /etc/grub.d/40_custom rajouter:
 #Clavier fr insmod keylayouts keymap fr
 
 
+## Exercice 2. Noyau
+
+### 1. Commencez par installer le paquet build-essential, qui contient tous les outils nécessaires (compilateurs, bibliothèques) à la compilation de programmes en C (entre autres).
+
 
 
 
