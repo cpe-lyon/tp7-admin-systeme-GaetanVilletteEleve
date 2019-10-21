@@ -64,19 +64,51 @@ Dans /etc/grub.d/40_custom rajouter:
 ## Exercice 2. Noyau
 
 ### 1. Commencez par installer le paquet build-essential, qui contient tous les outils nécessaires (compilateurs, bibliothèques) à la compilation de programmes en C (entre autres).
+<code>
+  sudo apt install build-essential
+</code></br>
+
+### 2.Créez un fichier hello.c contenant le code sur le tp
+<code>
+  sudo touch hello.c
+  sudo nano hello.c
+</code></br>
+
+### 3. Créez également un fichier Makefile :
+<code>
+  sudo touch Makefile
+  sudo nano Makefile
+</code></br>
+
+### 4. Compilez le module à l’aide de la commande make, puis installez-le à l’aide de la commande make install.
+<code>
+  make
+  make install
+</code></br>
 
 
+### 5. Chargez le module ; vérifiez dans le journal du noyau que le message ”La fonction init_module() est appelée” a bien été inscrit, synonyme que le module a été chargé ; confirmez avec la commande lsmod.
+<code>
+  sudo insmod /lib/.../hello.ko
+  lsmod | grep $hel
+</code></br>
 
+### 6. Utilisez la commande modinfo pour obtenir des informations sur le module hello.ko ; vous devriez notamment voir les informations figurant dans le fichier C.
+<code>
+  modinfo hello.ko
+</code></br>
+Donne toutes les informations dont le nom commence par MODULE_, plus des informations complémentaires.</br>
 
+### 7. Déchargez le module ; vérifiez dans le journal du noyau que le message ”La fonction cleanup_module() est appelée” a bien été inscrit, synonyme que le module a été déchargé ; confirmez avec la commande lsmod.
+<code>
+  sudo rmmod hello.ko
+  lsmod | grep $hel
+</code></br>
 
-
-
-
-
-
-
-
-
+### 8. Pour que le module soit chargé automatiquement au démarrage du système, il faut l’inscrire dans le fichier /etc/modules. Essayez, et vérifiez avec la commande lsmod après redémarrage de la machine.
+<code>
+  lsmod | grep $hel
+</code></br>
 
 
 
